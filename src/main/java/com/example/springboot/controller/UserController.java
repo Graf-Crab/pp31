@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -24,5 +25,16 @@ public class UserController {
         List<User> userList = userService.getAll();
         model.addAttribute("myusers",userList);
         return "users";
+    }
+
+    @GetMapping("/new")
+    public String createUserForm(User ser){
+        return "new";
+    }
+
+    @PostMapping()
+    public String createUser(User user) {
+        userService.saveUser(user);
+        return "redirect:/";
     }
 }
