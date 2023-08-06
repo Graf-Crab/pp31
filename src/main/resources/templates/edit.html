@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Update user</title>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create user</title>
 </head>
 <body>
-
-<form th:method="PATCH" th:action="@{/{id}(id=${myuser.getId()})}" th:object="${myuser}">
-    <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+<form action="#" th:action="@{/edit}" th:object="${user}" method="post">
     <br/>
-    <label for="name">Enter surname: </label>
-    <input type="text" th:field="*{surname}" id="surname"/>
+    <label for="name">First name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name">
     <br/>
-    <label for="name">Enter profession: </label>
-    <input type="text" th:field="*{profession}" id="profession"/>
+    <label for="surname">Last name</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="surname">
     <br/>
-    <label for="name">Enter email: </label>
-    <input type="text" th:field="*{email}" id="email"/>
+    <label for="profession">profession</label>
+    <input type="text" th:field="*{profession}" id="profession" placeholder="profession">
     <br/>
-    <input type="submit" value="Update!"/>
+    <label for="email">email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="email">
+    <br/>
+    <input type="submit" value="Update User">
 </form>
-
 </body>
 </html>
